@@ -28,9 +28,11 @@ func AddForm(c echo.Context) error {
 			Message: "Data tidak valid!",
 			Status:  false,
 		})
+
 	}
 
 	fmt.Println("Nilai isPublished yang diterima di backend:", addFormRequest.IsPublished)
+	fmt.Println("Nilai Formdata yang diterima di backend:", addFormRequest.FormData)
 
 	tokenString := c.Request().Header.Get("Authorization")
 	secretKey := "secretJwToken"

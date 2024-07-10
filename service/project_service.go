@@ -20,6 +20,8 @@ func AddProject(addForm models.Project, username string) error {
 
 	var productID int64
 	err := db.Get(&productID, "SELECT product_id FROM product_ms WHERE product_uuid = $1", addForm.ProductUUID)
+	//log.Println("productID:", &productID)
+	//fmt.Println("addForm.ProductUUID:", addForm.ProductUUID)
 	if err != nil {
 		log.Println("Error getting product_id:", err)
 		return err

@@ -83,6 +83,7 @@ func AddDA(addDA models.Form, isPublished bool, username string, userID int, div
 	}
 	var documentID int64
 	err := db.Get(&documentID, "SELECT document_id FROM document_ms WHERE document_uuid = $1", addDA.DocumentUUID)
+	fmt.Println("dokument aidi:", addDA.DocumentUUID)
 	if err != nil {
 		log.Println("Error getting document_id:", err)
 		return err
