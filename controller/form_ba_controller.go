@@ -149,6 +149,21 @@ func AddBA(c echo.Context) error {
 	}
 }
 
+func GetBACode(c echo.Context) error {
+	documentCode, err := service.GetBACode()
+	if err != nil {
+		log.Print(err)
+		response := models.Response{
+			Code:    500,
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Status:  false,
+		}
+		return c.JSON(http.StatusInternalServerError, response)
+	}
+
+	return c.JSON(http.StatusOK, documentCode)
+}
+
 func GetAllFormBA(c echo.Context) error {
 	form, err := service.GetAllFormBA()
 	if err != nil {

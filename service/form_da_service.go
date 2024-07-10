@@ -436,6 +436,17 @@ WHERE
 	return specDA, nil
 }
 
+func GetDACode() (models.DocCode, error) {
+	var documentCode models.DocCode
+
+	err := db.Get(&documentCode, "SELECT document_uuid FROM document_ms WHERE document_code = 'DA'")
+
+	if err != nil {
+		return models.DocCode{}, err
+	}
+	return documentCode, nil
+}
+
 func GetSpecAllDA(id string) ([]models.FormsDAAll, error) {
 	var signatories []models.FormsDAAll
 

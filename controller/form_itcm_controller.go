@@ -138,6 +138,21 @@ func AddITCM(c echo.Context) error {
 
 }
 
+func GetITCMCode(c echo.Context) error {
+	documentCode, err := service.GetITCMCode()
+	if err != nil {
+		log.Print(err)
+		response := models.Response{
+			Code:    500,
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Status:  false,
+		}
+		return c.JSON(http.StatusInternalServerError, response)
+	}
+
+	return c.JSON(http.StatusOK, documentCode)
+}
+
 // menampilkan form tanpa token
 func GetAllFormITCM(c echo.Context) error {
 	form, err := service.GetAllFormITCM()

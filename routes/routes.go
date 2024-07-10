@@ -84,6 +84,7 @@ func Route() *echo.Echo {
 
 	//FORM itcm
 	adminMember.POST("/add/itcm", controller.AddITCM)
+	e.GET("/form/itcm/code", controller.GetITCMCode)
 	e.GET("/form/itcm", controller.GetAllFormITCM)
 	e.GET("/form/itcm/:id", controller.GetSpecITCM)
 	e.GET("/itcm/:id", controller.GetSpecAllITCM)
@@ -93,6 +94,7 @@ func Route() *echo.Echo {
 
 	//form BA
 	adminMember.POST("/add/ba", controller.AddBA)
+	e.GET("/form/ba/code", controller.GetBACode)
 	e.GET("/form/ba", controller.GetAllFormBA)
 	e.GET("/form/ba/:id", controller.GetSpecBA)
 	e.GET("/ba/:id", controller.GetSpecAllBA)
@@ -100,8 +102,9 @@ func Route() *echo.Echo {
 	adminGroup.GET("/ba/all", controller.GetAllFormBAAdmin)
 	adminMember.PUT("/form/ba/update/:id", controller.UpdateFormBA)
 
-	//form dampak analisa
+	//form DA
 	adminMember.POST("/add/da", controller.AddDA)
+	e.GET("/form/da/code", controller.GetDACode)
 	e.GET("/dampak/analisa", controller.GetAllFormDA)
 	e.GET("/dampak/analisa/:id", controller.GetSpecDA)
 	e.GET("/da/:id", controller.GetSpecAllDAa)

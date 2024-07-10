@@ -111,6 +111,17 @@ func AddBA(addForm models.Form, ba models.BA, isPublished bool, userID int, user
 	return nil
 }
 
+func GetBACode() (models.DocCode, error) {
+	var documentCode models.DocCode
+
+	err := db.Get(&documentCode, "SELECT document_uuid FROM document_ms WHERE document_code = 'BA'")
+
+	if err != nil {
+		return models.DocCode{}, err
+	}
+	return documentCode, nil
+}
+
 func GetAllFormBA() ([]models.FormsBA, error) {
 	rows, err := db.Query(`
 		SELECT 

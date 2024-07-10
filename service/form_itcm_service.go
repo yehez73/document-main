@@ -174,6 +174,18 @@ func AddITCM(addForm models.Form, itcm models.ITCM, isPublished bool, userID int
 	return nil
 }
 
+func GetITCMCode() (models.DocCode, error) {
+	var documentCode models.DocCode
+
+	err := db.Get(&documentCode, "SELECT document_uuid FROM document_ms WHERE document_code = 'ITCM'")
+
+	if err != nil {
+		return models.DocCode{}, err
+	}
+	return documentCode, nil
+}
+
+
 // menampilkan form tanpa token
 func GetAllFormITCM() ([]models.FormsITCM, error) {
 	rows, err := db.Query(`SELECT

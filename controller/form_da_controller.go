@@ -149,6 +149,21 @@ func AddDA(c echo.Context) error {
 	}
 }
 
+func GetDACode(c echo.Context) error {
+	documentCode, err := service.GetDACode()
+	if err != nil {
+		log.Print(err)
+		response := models.Response{
+			Code:    500,
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Status:  false,
+		}
+		return c.JSON(http.StatusInternalServerError, response)
+	}
+
+	return c.JSON(http.StatusOK, documentCode)
+}
+
 func GetAllFormDA(c echo.Context) error {
 	form, err := service.GetAllFormDA()
 	if err != nil {
