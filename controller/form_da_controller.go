@@ -155,7 +155,7 @@ func GetDACode(c echo.Context) error {
 		log.Print(err)
 		response := models.Response{
 			Code:    500,
-			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi2",
 			Status:  false,
 		}
 		return c.JSON(http.StatusInternalServerError, response)
@@ -170,7 +170,7 @@ func GetAllFormDA(c echo.Context) error {
 		log.Print(err)
 		response := models.Response{
 			Code:    500,
-			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi3",
 			Status:  false,
 		}
 		return c.JSON(http.StatusInternalServerError, response)
@@ -234,7 +234,7 @@ func GetAllFormDAbyUser(c echo.Context) error {
 		log.Print(err)
 		response := models.Response{
 			Code:    500,
-			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi4",
 			Status:  false,
 		}
 		return c.JSON(http.StatusInternalServerError, response)
@@ -297,7 +297,7 @@ func GetAllDAbyAdmin(c echo.Context) error {
 		log.Print(err)
 		response := models.Response{
 			Code:    500,
-			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi5",
 			Status:  false,
 		}
 		return c.JSON(http.StatusInternalServerError, response)
@@ -324,7 +324,7 @@ func GetSpecDA(c echo.Context) error {
 			log.Print(err)
 			return c.JSON(http.StatusInternalServerError, &models.Response{
 				Code:    500,
-				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi2!",
+				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi6!",
 				Status:  false,
 			})
 		}
@@ -351,7 +351,7 @@ func GetSpecAllDA(c echo.Context) error {
 			log.Print(err)
 			return c.JSON(http.StatusInternalServerError, &models.Response{
 				Code:    500,
-				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi3!",
+				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi7!",
 				Status:  false,
 			})
 		}
@@ -376,7 +376,7 @@ func GetSpecAllDAa(c echo.Context) error {
 			log.Print(err)
 			return c.JSON(http.StatusInternalServerError, &models.Response{
 				Code:    500,
-				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi4!",
+				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi8!",
 				Status:  false,
 			})
 		}
@@ -549,7 +549,7 @@ func UpdateFormDA(c echo.Context) error {
 		} else {
 			return c.JSON(http.StatusInternalServerError, &models.Response{
 				Code:    500,
-				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi5!",
+				Message: "Terjadi kesalahan internal pada server. Mohon coba beberapa saat lagi9!",
 				Status:  false,
 			})
 		}
@@ -618,7 +618,7 @@ func SignatureUser(c echo.Context) error {
 		log.Print(err)
 		response := models.Response{
 			Code:    500,
-			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi",
+			Message: "Terjadi kesalahan internal server. Mohon coba beberapa saat lagi10",
 			Status:  false,
 		}
 		return c.JSON(http.StatusInternalServerError, response)
